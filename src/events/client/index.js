@@ -1,32 +1,37 @@
-import losers from '../../data.json';
-
 const app = require("express")();
 const PORT = process.env.PORT || 3000;
-
-console.log(losers);
+const { losers } = require("../../data.json");
 
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));
 
-function handleLoser() {
-  let loser = losers[Math.floor(Math.random() * 9)];
-  loser.count++;
-}
-
 app.get("/", (req, res) => {
-  res.send(losers);
+  res.send("<h3>Welcome to WaaaSabby's discord bot.</h3>");
 });
 
 app.get("/loser", (req, res) => {
-  res.status(200).send({
-    test: 1,
-    loser: "Guhny",
-  });
+  res.status(200).send(losers);
 });
 
 app.post("/loser", (req, res) => {
-  let loser = losers[Math.floor(Math.random() * 9)];
+  let loser = losers[Math.floor(Math.random() * losers.length)];
   loser.count++;
   res.status(200).send({
     loser: loser,
   });
+});
+
+app.post("/loser/:name", (req, res) => {
+  const { name } = req.params;
+  let exist = false;
+  losers.forEach((loser) => {
+    if (loser.name === name) {
+      exist = true;
+    }
+  });
+  if (exist) {
+    res.status(418).send({ message: "This user already exists" });
+  } else {
+    losers.push({ name: name, count: 0 });
+    res.status(200).send({ message: `${name} has been added` });
+  }
 });
