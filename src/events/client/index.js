@@ -47,6 +47,10 @@ function handleLoser() {
   loser.count++;
 }
 
+app.get("/", (req, res) => {
+  res.send("Testing");
+});
+
 app.get("/loser", (req, res) => {
   res.status(200).send({
     test: 1,
