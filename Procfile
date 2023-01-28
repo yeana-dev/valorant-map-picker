@@ -1,0 +1,1 @@
+web: node ./src/events/client/index.js
