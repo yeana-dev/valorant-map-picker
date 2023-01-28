@@ -1,0 +1,27 @@
+{
+  "name": "valorant-map-picker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/bot.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeana-dev/valorant-map-picker.git"
+  },
+  "keywords": [],
+  "author": "Yeana Cho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yeana-dev/valorant-map-picker/issues"
+  },
+  "homepage": "https://github.com/yeana-dev/valorant-map-picker#readme",
+  "dependencies": {
+    "@discordjs/rest": "^1.3.0",
+    "chalk": "^4.1.2",
+    "discord-api-types": "^0.37.14",
+    "discord.js": "^14.6.0",
+    "dotenv": "^16.0.3"
+  }
+}
