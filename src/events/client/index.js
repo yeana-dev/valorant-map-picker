@@ -1,46 +1,11 @@
+import losers from '../../data.json';
+
 const app = require("express")();
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => console.log(`listening on port ${PORT}`));
+console.log(losers);
 
-let losers = [
-  {
-    name: "Shinoong",
-    count: 0,
-  },
-  {
-    name: "Yeana",
-    count: 0,
-  },
-  {
-    name: "guhny",
-    count: 0,
-  },
-  {
-    name: "jaydini",
-    count: 0,
-  },
-  {
-    name: "sAnGy",
-    count: 0,
-  },
-  {
-    name: "WaaaSabby",
-    count: 0,
-  },
-  {
-    name: "Z",
-    count: 0,
-  },
-  {
-    name: "BRIVN",
-    count: 0,
-  },
-  {
-    name: "Chirido",
-    count: 0,
-  },
-];
+app.listen(PORT, () => console.log(`listening on port ${PORT}`));
 
 function handleLoser() {
   let loser = losers[Math.floor(Math.random() * 9)];
@@ -48,7 +13,7 @@ function handleLoser() {
 }
 
 app.get("/", (req, res) => {
-  res.send("Testing");
+  res.send(losers);
 });
 
 app.get("/loser", (req, res) => {
