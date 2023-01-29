@@ -27,6 +27,15 @@ module.exports = {
     let loser = losers[Math.floor(Math.random() * 9)];
     loser.count++;
 
+    axios
+      .post("/loser", {})
+      .then(function (res) {
+        console.log(res.data);
+      })
+      .catch(function (err) {
+        console.error(err);
+      });
+
     const newMessage = `**${loser.name}** is a loser\n${loser.name}'s been a loser ${loser.count} times`;
     await interaction.editReply({
       content: newMessage,
