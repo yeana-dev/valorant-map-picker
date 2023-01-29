@@ -29,14 +29,14 @@ module.exports = {
     axios
       .post("https://yeana-discord-bot.herokuapp.com/loser", {})
       .then(function (res) {
-        loser = res.data.loser;
+        loser = res.data;
         console.log(res.data);
       })
       .catch(function (err) {
         console.error(err);
       });
-
-    const newMessage = `**${loser.name}** is a loser\n${loser.name}'s been a loser ${loser.count} times`;
+    const newMessage = "test";
+    // const newMessage = `**${loser.name}** is a loser\n${loser.name}'s been a loser ${loser.count} times`;
     await interaction.editReply({
       content: newMessage,
     });

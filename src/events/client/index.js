@@ -15,9 +15,7 @@ app.get("/loser", (req, res) => {
 app.post("/loser", (req, res) => {
   let loser = losers[Math.floor(Math.random() * losers.length)];
   loser.count++;
-  res.status(200).send({
-    loser: loser,
-  });
+  res.status(200).send(loser);
 });
 
 app.post("/loser/:name", (req, res) => {
