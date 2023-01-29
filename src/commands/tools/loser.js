@@ -13,7 +13,7 @@ module.exports = {
     let newMsg;
 
     axios
-      .get("/")
+      .get("https://yeana-discord-bot.herokuapp.com/loser")
       .then(function (response) {
         console.log(response);
         newMsg = response;
