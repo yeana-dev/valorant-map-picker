@@ -27,7 +27,7 @@ module.exports = {
     let loser;
     let newMsg;
 
-    axios
+    await axios
       .post("https://yeana-discord-bot.herokuapp.com/loser", {})
       .then(function (res) {
         loser = res.data;
