@@ -1,19 +1,19 @@
 const { SlashCommandBuilder } = require("discord.js");
 const axios = require("axios");
-let losers;
+// let losers;
 
-axios
-  .get("https://yeana-discord-bot.herokuapp.com/loser")
-  .then((res) => {
-    losers = res.data;
-    console.log(res.data);
-  })
-  .catch((err) => {
-    console.error(err);
-  })
-  .then(() => {
-    console.log("Completed GET request");
-  });
+// axios
+//   .get("https://yeana-discord-bot.herokuapp.com/loser")
+//   .then((res) => {
+//     losers = res.data;
+//     console.log(res.data);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   })
+//   .then(() => {
+//     console.log("Completed GET request");
+//   });
 
 module.exports = {
   data: new SlashCommandBuilder()
