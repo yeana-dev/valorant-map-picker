@@ -12,17 +12,18 @@ module.exports = {
 
     let newMsg;
 
-    axios.get('/')
+    axios
+      .get("/")
       .then(function (response) {
         console.log(response);
         newMsg = response;
       })
       .catch(function (error) {
         console.error(error);
-    })
+      });
 
-    let loser = losers[Math.floor(Math.random() * 9)];
-    loser.count++;
+    // let loser = losers[Math.floor(Math.random() * 9)];
+    // loser.count++;
 
     // const newMessage = `**${loser.name}** is a loser\n${loser.name}'s been a loser ${loser.count} times`;
     await interaction.editReply({
