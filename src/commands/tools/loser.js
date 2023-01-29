@@ -1,48 +1,11 @@
 const { SlashCommandBuilder } = require("discord.js");
 const axios = require("axios");
-
-let losers = [
-  {
-    name: "Shinoong",
-    count: 13,
-  },
-  {
-    name: "Yeana",
-    count: 9,
-  },
-  {
-    name: "guhny",
-    count: 12,
-  },
-  {
-    name: "jaydini",
-    count: 9,
-  },
-  {
-    name: "sAnGy",
-    count: 9,
-  },
-  {
-    name: "WaaaSabby",
-    count: 16,
-  },
-  {
-    name: "Z",
-    count: 15,
-  },
-  {
-    name: "BRIVN",
-    count: 5,
-  },
-  {
-    name: "Chirido",
-    count: 0,
-  },
-];
+let losers;
 
 axios
   .get("https://yeana-discord-bot.herokuapp.com/loser")
   .then((res) => {
+    losers = res.data;
     console.log(res.data);
   })
   .catch((err) => {
