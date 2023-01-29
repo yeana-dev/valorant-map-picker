@@ -24,12 +24,12 @@ module.exports = {
       fetchReply: true,
     });
 
-    let loser = losers[Math.floor(Math.random() * 9)];
-    loser.count++;
+    let loser;
 
     axios
       .post("https://yeana-discord-bot.herokuapp.com/loser", {})
       .then(function (res) {
+        loser = res.data.loser;
         console.log(res.data);
       })
       .catch(function (err) {
