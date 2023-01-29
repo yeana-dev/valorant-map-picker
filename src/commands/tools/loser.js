@@ -43,7 +43,7 @@ let losers = [
 axios
   .get("https://yeana-discord-bot.herokuapp.com/loser")
   .then((res) => {
-    console.log(res);
+    console.log(res.data);
   })
   .catch((err) => {
     console.error(err);
