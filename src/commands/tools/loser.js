@@ -28,7 +28,7 @@ module.exports = {
     loser.count++;
 
     axios
-      .post("/loser", {})
+      .post("https://yeana-discord-bot.herokuapp.com/loser", {})
       .then(function (res) {
         console.log(res.data);
       })
