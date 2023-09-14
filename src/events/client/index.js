@@ -5,7 +5,7 @@ const { losers } = require("../../data.json");
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));
 
 app.get("/", (req, res) => {
-  res.send("<h3>Welcome to WaaaSabby's discord bot.</h3>");
+  res.send("<h3>Testing</h3>");
 });
 
 app.get("/loser", (req, res) => {

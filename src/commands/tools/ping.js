@@ -19,6 +19,7 @@ module.exports = {
       "Split",
       "Ascent",
       "Lotus",
+      "Sunset",
     ];
 
     const newMessage = `> Yeana's Bot picked:\n > **${
